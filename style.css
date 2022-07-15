@@ -1,0 +1,193 @@
+:root{
+   /*vriable declaration*/
+  --spectrumGreen:rgba(72, 247, 72, 0.952);
+  --facebookBlue:#4267B2;
+  --linkedInBlue:#0072b1;
+  --whatsappGreen:#25D366;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background:linear-gradient(to top right green,black)
+}
+
+/*navigation style starts now*/
+nav{
+  width: 80%;
+  height:15vh;
+  background: rgba(255, 255, 255, 0.205);
+  backdrop-filter: blur(10px);
+  flex: 1;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border:solid 1px rgb(53, 228, 37);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  animation: slide 3s 1 ;
+}
+@keyframes slide {
+
+  from{
+
+    top: -20%;
+  }
+  
+}
+
+nav .logoContainer{
+  height: 100%;
+  width: 30%;
+  background-image: url('images/Spectrum-Logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: intro 5s 1 ;
+}
+
+nav a{
+
+  text-decoration: none;
+  color: black;
+  height: 2rem;
+  width: 8rem;
+  font-weight: bolder;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+nav a:hover{
+
+color: var(--spectrumGreen);
+
+}
+
+nav button[id="toggle"]{
+  display: none;
+}
+
+section{
+
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-style: solid;
+}
+
+
+
+#section1 .contentLeft{
+
+  height: 30vh;
+  width: 35%;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+#section1 .contentLeft h1{
+  text-align: center;
+  font-size: 30px;
+}
+#section1 .contentLeft h1 span{
+
+  font-size: 25px;
+}
+#section1 .socials{
+
+  width: 50%;
+  height: 12vh;
+  position: absolute;
+  bottom: 5%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 30px;
+ 
+}
+ion-icon{
+ border: solid;
+ height: 50px;
+ width: 50px;
+ border-radius: 50%;
+ padding: 10px;
+ animation: spin 3s 1 ease-in-out;
+}
+@keyframes spin {
+
+  from{
+
+    transform: rotateY(360deg);
+  }
+  
+}
+
+#facebook
+{
+  color: var(--facebookBlue);
+}
+#linkedin{
+
+  color: var(--linkedInBlue);
+}
+#whatsapp{
+  color: var(--whatsappGreen);
+}
+/* hidding nav on small screens and positioning it to the side*/
+@media screen and (min-width:360px) and (max-width:720px) {
+  section{
+    flex-direction: column;
+  }
+  nav{
+    width: 80%;
+    height:10vh;
+    border-style: none;
+    gap: 15px;
+    animation: slide 3s 1 ;
+  }
+  nav .logoContainer{
+    height: 100%;
+    width: 100%;
+  }
+  nav a{
+    display: none;
+  }
+  nav button[id="toggle"]{
+    border:none;
+    height: 3vh;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 20px;
+    color: var(--spectrumGreen);
+  }
+  
+
+
+}
+
